@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>offset</title>
+    <script src="jquery.min.js"></script>
+    <script src="lib/marked.min.js"></script>
+    <script src="lib/prettify.min.js"></script>
+    <script src="lib/raphael.min.js"></script>
+    <script src="lib/underscore.min.js"></script>
+    <script src="lib/sequence-diagram.min.js"></script>
+    <script src="lib/flowchart.min.js"></script>
+    <script src="lib/jquery.flowchart.min.js"></script>
+    <script src="editormd.js"></script>
 </head>
+
 <body>
+    <div id="test-editormd">
+        　　<textarea style="display:none;" placeholder="markdown语言">#Editor.md</textarea>
+    </div>
     注：请勿非法使用，只适用学习交流 加载文件有时候可能比较慢，耐心等待一下就好了
+    
+    <div>
+        2021/2/4 10:13
+        <div>
+            <a href="掘地-E-202102041012.md">掘地 E语言基址 (时间问题，暂未更新)</a>
+        </div>
+        <div>
+            <a href="掘地-SDK-202102041012.7z">掘地 SDK</a>
+        </div>
+    </div>
     <div>
         2021/1/27 13:06
         <div>
@@ -32,4 +56,15 @@
         </div>
     </div>
 </body>
+<script>
+    editormd.markdownToHTML("test-editormd", {
+        htmlDecode: "style,script,iframe",
+        emoji: true,
+        taskList: true,
+        tex: true,  // 默认不解析
+        flowChart: true,  // 默认不解析
+        sequenceDiagram: true  // 默认不解析
+    });
+</script>
+
 </html>
